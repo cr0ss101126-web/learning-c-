@@ -20,6 +20,8 @@ int main() {
     char c;
     string parolaCorrente = "";
 
+     ofstream report("ReportFile.txt");
+
     while (file.get(c)) {
 
 
@@ -30,10 +32,13 @@ int main() {
         } else {
             if (parolaCorrente.size() >= 4) {
                 cout << parolaCorrente << endl;
-                parolaCorrente = "";
+                report << parolaCorrente << endl;
             }
+            parolaCorrente = "";
         }
     }
+    report.close();
+
     return 0;
 
 
